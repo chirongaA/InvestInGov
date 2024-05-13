@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="home.css">
+<link  rel="icon" type="image/png" href="images/favicon.jpg">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>DASHBOARD</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="images/homelogo.jpg" alt="logo">
+                </span>
+                <div class="text header-text">
+                    <span class="start">Welcome</span><br>
+                    <span class="user">User</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                     <i class='bx bx-search icon'></i>
+                        <input type="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="home.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user-pin icon'></i>
+                            <span class="text nav-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <span class="text nav-text">Transactions</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-spreadsheet icon'></i>
+                            <span class="text nav-text">Securities</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="bids.html">
+                            <i class='bx bxs-hand icon' ></i>
+                            <span class="text nav-text">Bids</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="payments.html">
+                            <i class='bx bx-credit-card icon'></i>
+                            <span class="text nav-text">Payments</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom content">
+                <li class="">
+                    <a href="login.html">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                       <span class="switch"></span> 
+                    </div>
+                </li>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <span>WELCOME TO THE INVESTINGOV PLATFORM</span>
+                    <h2>DASHBOARD</h2>
+                    </div>
+                    <div class="user-info">
+                        <div class="search--box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <img src="images/dashlogo.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class= "card--container">
+                    <h2 class="main--title"> Website Modules</h2>
+                    <div class = "card--wrapper">
+                        
+                        <div class="payment--card light-red">
+                            <div class="card--header">
+                                <div class="amount">
+                                    <span class="title">
+                                        PORTFOLIO
+                                    </span>
+                                </div>
+                                <i class='bx bx-user-pin icon-card'></i>
+                            </div>
+                            <span class="card--content">
+                                The portfolio module is a collection of all your personal details. You can view the details of your profile.
+                            </span>
+                        </div>
+
+                        <div class="payment--card light-blue">
+                            <div class="card--header">
+                                <div class="amount">
+                                    <span class="title">
+                                        TRANSACTIONS
+                                    </span>
+                                </div>
+                                <i class='bx bx-transfer-alt icon-card'></i>
+                            </div>
+                            <span class="card--content">
+                                This module provides you with a collection of all your investments. You can view the details of each investment and the total value of your investments.
+                            </span>
+                        </div>
+
+                        <div class="payment--card light-green">
+                            <div class="card--header">
+                                <div class="amount">
+                                    <span class="title">
+                                        SECURITIES
+                                    </span>
+                                </div>
+                                <i class='bx bx-spreadsheet icon-card'></i>
+                            </div>
+                            <span class="card--content">
+                                This module provides you with all the details concerning the securities (both opened and closed). You can view the details of each bond including their maturity dates, date of auction and their face values.
+                            </span>
+                        </div>
+
+                        <div class="payment--card light-purple">
+                            <div class="card--header">
+                                <div class="amount">
+                                    <span class="title">
+                                        BIDS
+                                    </span>
+                                </div>
+                                <i class='bx bxs-hand icon-card'></i>
+                            </div>
+                            <span class="card--content">
+                                This module enables you to place bids on the opened bonds. You are required to provide your details and the details of the bond itself in order to successfully place a bid.
+                            </span>
+                        </div>
+
+                        <div class="payment--card light-grey">
+                            <div class="card--header">
+                                <div class="amount">
+                                    <span class="title">
+                                        PAYMENTS
+                                    </span>
+                                </div>
+                                <i class='bx bx-credit-card icon-card'></i>
+                            </div>
+                            <span class="card--content">
+                                This module enables users to fulfill their payments for the bonds successfully placed. You are required to provide your details of payment and the details of the bond itself in order to successfully pay for a bid placed.
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
