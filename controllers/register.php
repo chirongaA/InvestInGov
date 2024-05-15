@@ -38,8 +38,12 @@ $create = $user->create($_POST);
 if($create)
 {
     echo json_encode(array("status"=>"success", "message"=>"User created successfully"));
+    //Set http response code
+    http_response_code(201);
 }
 else
 {
     echo json_encode(array("status"=>"error", "message"=>"User could not be created"));
+    //Set http response code
+    http_response_code(500);
 }
