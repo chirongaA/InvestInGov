@@ -1,4 +1,9 @@
 <?php
+//Load the necessary classes
+require_once './models/user.model.php'; //User model
+?>
+
+<?php
 //check and see if all the data has been submitted
 /*
 [
@@ -9,6 +14,7 @@
     "phone_number":
     "full_name":
     "Username":
+]
 */
 //Loop through the data and check if all the data has been submitted
 foreach($_POST as $key => $value)
@@ -18,4 +24,22 @@ foreach($_POST as $key => $value)
         echo json_encode(array("status"=>"error", "message"=>"Please fill in all the fields","$key"=>null));
         return;
     }
+}
+//Create a new user object
+$user = new User();
+//Check if the passwords match
+if($_POST['password'] != $_POST['confirm_password'])
+{
+    echo json_encode(array("status"=>"error", "message"=>"Passwords do not match"));
+    return;
+}
+//Create a new user
+$create = $user->create($_POST);
+if($create)
+{
+    echo json_encode(array("status"=>"success", "message"=>"User created successfully"));
+}
+else
+{
+    echo json_encode(array("status"=>"error", "message"=>"User could not be created"));
 }
