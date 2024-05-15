@@ -10,52 +10,52 @@
 </head>
 <body>
 <div class="reg-container">
-  <form action="" method="post" id="registration">
+  <form action="" method="POST" id="registration">
   <h2>Register Your Account</h2>
   <div class="input-box">
     <div class="input-field">
-        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Full Name" name="full_name" required>
         <i class='bx bx-user-circle'></i>
   </div>
   <div class="input-field">
-    <input type="text" placeholder="Username" required>
+    <input type="text" placeholder="Username" required name="Username">
     <i class='bx bx-user-circle'></i>
    </div>
    </div>
   
    <div class="input-box">
     <div class="input-field">
-        <input type="email" placeholder="Email" required>
+        <input type="email" placeholder="Email" required name="email">
         <i class='bx bx-envelope' ></i>
   </div>
   <div class="input-field">
-    <input type="number" placeholder="ID number" required>
+    <input type="number" placeholder="ID number" required name="id_number">
     <i class='bx bxs-id-card'></i>
    </div>
    </div>
 
   <div class="input-box">
     <div class="input-field">
-        <input type="text" placeholder="KRA PIN number" required>
+        <input type="text" placeholder="KRA PIN number" required name="kra_pin_number">
         <i class='bx bx-certification' ></i>
   </div>
   <div class="input-field">
-    <input type="number" placeholder="Phone number" required>
+    <input type="number" placeholder="Phone number" required name="phone_number">
     <i class='bx bx-phone' ></i>
    </div>
    </div>
 
   <div class="input-box">
   <div class="input-field">
-        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Password" required name="password">
         <i class='bx bx-lock' ></i>
   </div>
   <div class="input-field">
-    <input type="password" placeholder="Confirm Password" required>
+    <input type="password" placeholder="Confirm Password" required name="confirm_password">
     <i class='bx bx-lock' ></i>
    </div>
   </div>
-  <label><input type= "checkbox"> I have confirmed all my details</label><br>
+  <label><input type= "checkbox" name="confirmation"> I have confirmed all my details</label><br>
   <button type=" submit" class="btn">Register</button>
   <p>You already have an account? <a href="login.html">Login</a></p>
   </form>

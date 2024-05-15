@@ -11,16 +11,29 @@ class Router{
 
     public function route($path)
     {
-        $method = $_SERVER['REQUEST_METHOD'];
         //Strip the parameters from the path
         if(isset(explode('?', $path)[1])    )
         {
-        $parameters = explode('?', $path)[1];
+        $parameters = explode('?', $path)[1];//Get the parameters
         }
         else{
             $parameters=null;
         }
-        $path = explode('?', $path)[0];
+        $path = explode('?', $path)[0]; //Get the path without the parameters
+        $method = $_SERVER['REQUEST_METHOD'];//Get the request method
+        //Check if the method type is POST and the content type is JSON
+        if($method == 'POST' && $_SERVER['CONTENT_TYPE'] == 'application/json')
+        {
+            //Get the JSON data
+            $data = json_decode(file_get_contents('php://input'), true);
+            //Check if the data is not null
+            if($data != null)
+            {
+                //Add the data to the $_POST array
+                $_POST = $data;
+                $parameters=$data;
+            }
+        }
         $matchingRoutes = array_filter($this->routes, function($route) use ($path, $method) {
             return $route->path == $path && $route->method == $method;
         });

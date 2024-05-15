@@ -1,5 +1,4 @@
 <?php 
-
 //Include routes file
 include_once 'routes.php';
 
