@@ -4,7 +4,7 @@ class Database{
     //The connection string
     private $connection;
     //The constructor
-    function __construct($host, $username, $password, $database)
+    function __construct($host="localhost", $username="root", $password="", $database="bonds")
     {
         //Create a connection
         $this->connection = new mysqli($host, $username, $password, $database);
