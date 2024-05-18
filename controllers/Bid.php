@@ -25,7 +25,7 @@ foreach($_POST as $key => $value)
     }
 }
 //Create a new user object
-$user = new User();
+$user = new Bids();
 //Create a new user
 $create = $bid->create($_POST);
 if($create)

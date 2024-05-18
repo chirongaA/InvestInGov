@@ -23,19 +23,4 @@ const body = document.querySelector("body"),
         }
     });
     
-    function clearForm(){
-        document.getElementById('Bids').reset();
-            var fieldsToValidate = ['username', 'bondID', 'yield', 'fvalue', 'maturity', 'rate'];
-            fieldsToValidate.forEach(function(field) {
-                document.getElementById(field).classList.remove('invalid');
-                document.getElementById(field + 'Error').textContent = '';
-  });
-}
 
-function validateYield() {
-    var yield = document.getElementById('yield').value;
-    if (yield % 50000 !== 0) {
-        alert('Yield must be a multiple of 50,000');
-        document.getElementById('yield').value = '';
-    }
-}

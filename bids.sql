@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 10:54 AM
+-- Generation Time: May 18, 2024 at 03:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,9 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `bids` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `bond_id` varchar(100) NOT NULL,
+  `bond_id` int(100) NOT NULL,
   `yield` int(100) NOT NULL,
-  `phone_number` int(100) NOT NULL
+  `facevalue` int(100) NOT NULL,
+  `maturity` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
