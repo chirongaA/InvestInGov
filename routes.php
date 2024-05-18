@@ -8,8 +8,8 @@ $homepage= new route('GET', '/home', function($parameters) {
 });
 array_push($routes, $homepage);//put the route into the array
 
-$route= new route('GET', '/about', function($parameters) {
-    echo "Welcome to the about page";
+$route= new route('GET', '/bids', function($parameters) {
+    echo "./controllers/views/bids.php";
 });
 array_push($routes, $route);//put the route into the array
 
@@ -20,6 +20,11 @@ array_push($routes, $route);//put the route into the array
 
 $route= new route('POST', '/submit_register', function($parameters) {
     include './controllers/register.php';
+});
+array_push($routes, $route);//put the route into the array
+
+$route= new route('POST', '/submit_bid', function($parameters) {
+    include './controllers/Bid.php';
 });
 array_push($routes, $route);//put the route into the array
 
