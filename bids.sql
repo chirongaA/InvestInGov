@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 03:01 PM
+-- Generation Time: May 18, 2024 at 07:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,7 +33,8 @@ CREATE TABLE `bids` (
   `bond_id` int(100) NOT NULL,
   `yield` int(100) NOT NULL,
   `facevalue` int(100) NOT NULL,
-  `maturity` int(100) NOT NULL
+  `maturity` int(100) NOT NULL,
+  `rate` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

@@ -13,6 +13,8 @@ class Bids extends Database{
     private $facevalue=null;
     private $maturity=null;
     private $rate=null;
+    //The bids id
+    private $bid_id=null;
     
     //The constructor
     function __construct()

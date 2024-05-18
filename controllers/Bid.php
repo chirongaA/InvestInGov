@@ -1,6 +1,6 @@
 <?php
 //Load the necessary classes
-require_once './models/user.model.php'; //User model
+require_once './models/bids.models.php'; //Bids model
 ?>
 
 <?php
@@ -24,9 +24,9 @@ foreach($_POST as $key => $value)
         return;
     }
 }
-//Create a new user object
-$user = new Bids();
-//Create a new user
+//Create a new bids object
+$bid = new Bids();
+//Create a new bid
 $create = $bid->create($_POST);
 if($create)
 {

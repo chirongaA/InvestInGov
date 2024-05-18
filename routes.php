@@ -9,7 +9,7 @@ $homepage= new route('GET', '/home', function($parameters) {
 array_push($routes, $homepage);//put the route into the array
 
 $route= new route('GET', '/bids', function($parameters) {
-    echo "./controllers/views/bids.php";
+    include './controllers/views/bids.php';
 });
 array_push($routes, $route);//put the route into the array
 

@@ -36,8 +36,9 @@ class User extends Database{
         $id_number=$this->escape($user['id_number']);
         //Hash the password
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $table_name = self::TABLE_NAME;
+        
         //Create the query
+        $table_name = self::TABLE_NAME;
         $query = "INSERT INTO $table_name (username, password, email,id_number, kra_pin, phone, full_name) VALUES ('$username', '$password', '$email','$id_number', '$kra_pin_number', '$phone_number', '$full_name')";
         //Execute the query
         $exec=$this->query($query);
