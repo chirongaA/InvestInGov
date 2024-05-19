@@ -61,3 +61,4 @@ class Bids extends Database{
         return true;
     }
 }
+?>
