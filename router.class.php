@@ -43,6 +43,7 @@ class Router{
             return;
         }
         echo "404 - Not Found";
+        http_response_code(404);//Return a 404 status code
     }
 }
 
