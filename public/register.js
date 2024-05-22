@@ -8,7 +8,15 @@ window.onload = () => {
             body: formData,
         }).then(res => res.json())
         .then(data => {
-            console.log(data);
+            //check if there is an error
+            if(data.status=="error"){
+                //display the error message
+                alert(data.message);
+            }
+            else{
+                // alert(data.message);
+                window.location.href = "./home";
+            }
         })
     })
 }
