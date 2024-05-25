@@ -6,7 +6,7 @@ require_once './models/database.class.php';
 class Bids extends Database{
     //The table name
     const TABLE_NAME = 'bids';
-    //Members for the user class
+    //Members for the bids class
     private $username=null;
     private $bond_id=null;
     private $yield=null;
@@ -25,7 +25,7 @@ class Bids extends Database{
     //Method to add a new bid to the database
     public function create($bid):bool
     {
-        //Escape the user data
+        //Escape the bids data
         $username = $this->escape($bid['username']);
         $bond_id = $this->escape($bid['bond_id']);
         $yield = $this->escape($bid['yield']);

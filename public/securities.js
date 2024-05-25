@@ -1,9 +1,9 @@
 window.onload = () => {
-    const form = document.getElementById('Bids');
+    const form = document.getElementById('Securities');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new URLSearchParams(new FormData(form));
-        fetch('../submit_bid', {
+        fetch('../submit_security', {
             method: "POST",
             body: formData,
         }).then(res => res.json())
@@ -39,17 +39,17 @@ const body = document.querySelector("body"),
     });
 
 
-    function validateYield() {
-        var yield = document.getElementById('yield').value;
+    function validateFvalue() {
+        var yield = document.getElementById('facevalue').value;
         if (yield % 50000 !== 0) {
-            alert('Yield must be a multiple of 50,000');
-            document.getElementById('yield').value = '';
+            alert('Face Value must be a multiple of 50,000');
+            document.getElementById('facevalue').value = '';
         }
     }
 
     function clearForm(){
-        document.getElementById('Bids').reset();
-            var fieldsToValidate = ['username', 'bond_id', 'yield', 'facevalue', 'maturity', 'rate'];
+        document.getElementById('Securities').reset();
+            var fieldsToValidate = ['bond_id', 'bond_name', 'facevalue', 'maturity', 'rate', 'status'];
             fieldsToValidate.forEach(function(field) {
                 document.getElementById(field).classList.remove('invalid');
                 document.getElementById(field + 'Error').textContent = '';

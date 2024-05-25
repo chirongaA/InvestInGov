@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="./public/bids.css">
+<link rel="stylesheet" type="text/css" href="./public/securities.css">
 <link  rel="icon" type="image/png" href="images/favicon.jpg">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<title>Dashboard</title>
+<title>Admin Securities page</title>
 </head>
 <body>
     <nav class="sidebar close">
@@ -18,7 +18,7 @@
                 </span>
                 <div class="text header-text">
                     <span class="start">Welcome</span><br>
-                    <span class="user">User</span>
+                    <span class="user">Admin</span>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="./public/home.html">
+                        <a href="#">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -57,13 +57,13 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="./public/bids.html">
+                        <a href="#">
                             <i class='bx bxs-hand icon' ></i>
                             <span class="text nav-text">Bids</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="payments.html">
+                        <a href="#">
                             <i class='bx bx-credit-card icon'></i>
                             <span class="text nav-text">Payments</span>
                         </a>
@@ -99,7 +99,7 @@
         <div class="main--content">
             <div class="header--wrapper">
                 <div class="header--title">
-                    <h2>BIDS</h2>
+                    <h2>SECURITIES</h2>
                 </div>
                     <div class="user-info">
                         <div class="search--box">
@@ -111,55 +111,56 @@
             </div>
 
                 <div class= "card--container">
-                    <p class="bid-header"> Kindly fill out this form and confirm to place your bid.<br>Please remember that you can only place bids on the bonds that are opened for auction.</p>
-                    <p class="mat">*MATURITY- This is the number of years after which the issuer of the bond repays the principal amount to the bondholder and stops making interest payments.</p>
-                    <p class="yield"> *Yield has to be input in mulitples of 50,000</p>
                     <div class = "card--wrapper">
                         <div class="card">
                             <div class="card--header">
-                                <h3>Bid Submission Form</h3>
+                                <h3>Post Securities Here</h3>
                             </div>
 
                             <div class="bid-container">
-                                <form id="Bids" action="" method="post">
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="text" id="username" name="username" placeholder="Username" required>
-                                    </div>
-                                </div>
-                                
+                                <form id="Securities" action="" method="post">
                                 <div class="input-box">
                                     <div class="input-field">
                                         <input type="text" id="bond_id" name="bond_id" placeholder="BOND ID" required>
                                     </div>
                                 </div>
+                                
+                                <div class="input-box">
+                                    <div class="input-field">
+                                        <input type="text" id="bond_name" name="bond_name" placeholder="BOND NAME" required>
+                                    </div>
+                                </div>
 
                                 <div class="input-box">
                                     <div class="input-field">
-                                        <input type="number" id="yield" name="yield" placeholder="Yield" required onchange="validateYield()">
+                                        <input type="number" id="facevalue" name="facevalue" placeholder="FACE VALUE" required onchange="validateFvalue()">
                                     </div>
                                 </div>
                               
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="number" id="facevalue" name="facevalue" placeholder="Face Value" required>
-                                    </div>
-                                </div>
-
                                 <div class="input-box">
                                     <div class="input-field">
                                         <input type="number" id="maturity" name="maturity" min="1" max="30" placeholder="Maturity" required>
                                     </div>
                                 </div>
-                              
+
                                 <div class="input-box">
                                     <div class="input-field">
                                         <input type="number" id="rate" name="rate" step="0.0001" placeholder="Rate" required>
                                     </div>
                                 </div>
                               
-                                <label><input type= "checkbox"> I have confirmed all my details</label><br>
-                                <button type="submit" class="btn">Place Bid</button>
+                                <div class="input-box">
+                                    <div class="input-field">
+                                        <select id="status" name="status" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="open">Open</option>
+                                            <option value="closed">Closed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                              
+                                <label><input type= "checkbox"> I have confirmed all the details</label><br>
+                                <button type="submit" class="btn">POST BOND</button>
                                 <br><br>
                                 <button type="reset"  class="btn2" onclick="clearForm()">Clear</button>
 
@@ -170,7 +171,7 @@
         </div>
     </section>
 
-    <script src="./public/bids.js"></script>
+    <script src="./public/securities.js"></script>
 
 </body>
 </html>
