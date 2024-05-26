@@ -25,6 +25,10 @@ $route= new route('GET', '/login', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
+$route= new route('GET', '/adminsecurities', function($parameters) {
+    include './controllers/views/securities.php';
+});
+array_push($routes, $route);//put the route into the array
 
 
 // routes for submitting data
@@ -40,6 +44,11 @@ array_push($routes, $route);//put the route into the array
 
 $route= new route('POST', '/submit_login', function($parameters) {
     include './controllers/Login.php';
+});
+array_push($routes, $route);//put the route into the array
+
+$route= new route('POST', '/submit_security', function($parameters) {
+    include './controllers/Security.php';
 });
 array_push($routes, $route);//put the route into the array
 
