@@ -1,6 +1,9 @@
 <?php
-// Include your database class
-require_once './models/database.class.php';
+//Include the database class
+$directory = dirname(__FILE__);
+$database = "$directory/database.class.php";
+require_once($database);
+
 
 class LoginModel extends Database {
     // Constructor

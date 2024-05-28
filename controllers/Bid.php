@@ -1,6 +1,8 @@
 <?php
 //Load the necessary classes
-require_once './models/bids.models.php'; //Bids model
+$directory = dirname(__FILE__);
+$models = realpath("$directory/../models");
+require_once("$models/bids.models.php");
 ?>
 
 <?php
@@ -16,12 +18,17 @@ require_once './models/bids.models.php'; //Bids model
 ]
 */
 //Loop through the data and check if all the data has been submitted
+if(!isset($_POST) || empty($_POST))
+{
+    echo json_encode(array("status"=>"error", "message"=>"Please fill in all the fields"));
+    exit();
+}
 foreach($_POST as $key => $value)
 {
-    if($value == null)
+    if($value == null || $value == "")
     {
         echo json_encode(array("status"=>"error", "message"=>"Please fill in all the fields","$key"=>null));
-        return;
+        exit();
     }
 }
 //Create a new bids object
