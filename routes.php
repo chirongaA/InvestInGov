@@ -47,7 +47,7 @@ $route= new route('POST', '/submit_login', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
-$route= new route('POST', '/submit_security', function($parameters) {
+$route= new route('POST', '/admin/submit_security', function($parameters) {
     include './controllers/Security.php';
 });
 array_push($routes, $route);//put the route into the array
