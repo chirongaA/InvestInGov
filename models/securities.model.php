@@ -60,5 +60,16 @@ class Securities extends Database{
         $this->status = $data['status'];
         return true;
     }
+    //Method to fetch all records from the database
+    public function fetchAll()
+    {
+        //Create the query
+        $table_name = self::TABLE_NAME;
+        $query = "SELECT * FROM $table_name";
+        //Execute the query
+        $exec=$this->query($query);
+        //Return the result
+        return $exec;
+    }
 }
 ?>
