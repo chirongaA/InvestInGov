@@ -30,6 +30,10 @@ $route= new route('GET', '/adminsecurities', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
+$route= new route('GET', '/securities', function($parameters) {
+    include './controllers/Fetchsecurities.php';
+});
+array_push($routes, $route);//put the route into the array
 
 // routes for submitting data
 $route= new route('POST', '/submit_register', function($parameters) {
