@@ -1,5 +1,5 @@
 <?php
-include('experess-stk.php');
+include('express-stk.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -120,7 +120,7 @@ include('experess-stk.php');
                 <div class= "card_container">
                     <div class="card">
                         <div class="row">
-                            <img src= "images/icons8-mpesa-48.png" style="width: 30%; margin: 0 35%;">
+                            <img src= "../images/icons8-mpesa-48.png" style="width: 30%; margin: 0 35%;">
                             <p style = "color: #8F9C23; line-height: 1.7;"> 1. Enter the <b> Phone Number </b> and press "<b> Confirm and Pay</b>" </br>
                             2. You will receive a prompt on your phone. Enter your <b> MPESA PIN</b>
                         </p>
