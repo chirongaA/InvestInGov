@@ -3,21 +3,21 @@
 include 'accessToken.php';
 
 date_default_timezone_set('Africa/Nairobi');
-$processrequestUrl= 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest ';
+$processrequestUrl= 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 $callbackurl='https://arriving-carefully-dingo.ngrok-free.app/tests/callback.php';
 $passkey='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 $BusinessShortCode='174379';
 $Timestamp= date('YmdHis');
 //encrypt the data sent to get the password
-$Passsword = base64_encode($BusinessShortCode.$passkey.$Timestamp);
-$phone = '254708374149';
+$Passsword = base64_encode($BusinessShortCode . $passkey . $Timestamp);
+$phone = '254793704787';
 $money ='1';
 $PartyA = $phone;
-$PartyB = '254793704787';
+$PartyB = '254708374149';
 $AccountReference = 'InvestinGov';
-$TransactionDesc = 'stk push test transaction';
+$TransactionDesc = 'stkpush test';
 $Amount = $money;  
-$stkpushheader = ['Content-Type:application/json','Authorization:Bearer '.$access_token];
+$stkpushheader = ['Content-Type:application/json','Authorization:Bearer ' .$access_token];
 
 //Initiate cURL
 $curl = curl_init();
@@ -44,5 +44,5 @@ curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 $curl_response = curl_exec($curl);
 
-echo $curl_response;
-echo "hello world";  
+//echo response
+echo $curl_response;  
