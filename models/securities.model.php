@@ -61,15 +61,21 @@ class Securities extends Database{
         return true;
     }
     //Method to fetch all records from the database
-    public function fetchAll()
+    public function fetchAll():array
     {
+        $results=[];
         //Create the query
         $table_name = self::TABLE_NAME;
         $query = "SELECT * FROM $table_name";
         //Execute the query
         $exec=$this->query($query);
+        //Fill the results array
+        while($row = $exec->fetch_assoc())
+        {
+            $results[] = $row;
+        }
         //Return the result
-        return $exec;
+        return $results;
     }
 }
 ?>
