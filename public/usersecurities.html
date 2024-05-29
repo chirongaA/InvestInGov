@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./public/usersecurities.css">
+<link  rel="icon" type="image/png" href="images/favicon.jpg">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>SECURITIES</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="images/homelogo.jpg" alt="logo">
+                </span>
+                <div class="text header-text">
+                    <span class="start">Welcome</span><br>
+                    <span class="user">User</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                     <i class='bx bx-search icon'></i>
+                        <input type="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="./public/home.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user-pin icon'></i>
+                            <span class="text nav-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <span class="text nav-text">Transactions</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-spreadsheet icon'></i>
+                            <span class="text nav-text">Securities</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./public/bids.html">
+                            <i class='bx bxs-hand icon' ></i>
+                            <span class="text nav-text">Bids</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="payments.html">
+                            <i class='bx bx-credit-card icon'></i>
+                            <span class="text nav-text">Payments</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom content">
+                <li class="">
+                    <a href="./public/login.html">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                       <span class="switch"></span> 
+                    </div>
+                </li>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <h2>SECURITIES</h2>
+                </div>
+                    <div class="user-info">
+                        <div class="search--box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <img src="images/dashlogo.jpg" alt="">
+                    </div>
+            </div>
+
+                <div class= "card--container">
+                    <div class = "card--wrapper">
+                        <div class="card">
+                            <div class="card--header">
+                                <h3>Securities</h3>
+                            </div>
+                            
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>BondId</th>
+                                        <th>BondName</th>
+                                        <th>Facevalue</th>
+                                        <th>Maturity</th>
+                                        <th>Rate</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KE0000007</td>
+                                        <td>IFB1/2023/17</td>
+                                        <td>100000000</td>
+                                        <td>17</td>
+                                        <td>16.2345</td>
+                                        <td>opened</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KE0000008</td>
+                                        <td>IFB1/2023/15</td>
+                                        <td>500000000</td>
+                                        <td>15</td>
+                                        <td>16.6045</td>
+                                        <td>opened</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KE0000009</td>
+                                        <td>IFB1/2024/21</td>
+                                        <td>750000000</td>
+                                        <td>21</td>
+                                        <td>16.7845</td>
+                                        <td>closed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <script src="./public/bids.js"></script>
+
+</body>
+</html>

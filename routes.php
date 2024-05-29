@@ -35,6 +35,13 @@ $route= new route('GET', '/securities', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
+$route= new route('GET', '/usersecurities', function($parameters) {
+    include './controllers/views/usersecurities.php';
+});
+array_push($routes, $route);//put the route into the array
+
+
+
 // routes for submitting data
 $route= new route('POST', '/submit_register', function($parameters) {
     include './controllers/register.php';
