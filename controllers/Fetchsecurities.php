@@ -3,6 +3,7 @@
 $directory = dirname(__FILE__);
 $models = realpath("$directory/../models");
 require_once("$models/securities.model.php");
+use models\Securities;
 ?>
 
 <?php

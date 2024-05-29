@@ -4,6 +4,7 @@ require_once './models/securities.model.php'; //Bids model
 ?>
 
 <?php
+use models\Securities; //Securities model
 //check and see if all the data has been submitted
 /*
 [

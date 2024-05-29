@@ -6,6 +6,8 @@ require_once("$models/bids.models.php");
 ?>
 
 <?php
+
+use models\Bids;
 //check and see if all the data has been submitted
 /*
 [

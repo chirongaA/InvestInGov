@@ -1,6 +1,9 @@
 <?php
+namespace models;
 //Include the database class
 require_once './models/database.class.php';
+//Import the database class namespace
+use models\Database;
 
 //Create the Securities class as a child class of the database class
 class Securities extends Database{

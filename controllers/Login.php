@@ -1,4 +1,5 @@
 <?php
+use models\LoginModel;
 // Include your LoginModel class
 require_once './models/login.model.php';
 

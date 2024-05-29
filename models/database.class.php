@@ -1,9 +1,20 @@
 <?php
+//Declare database namespace
+namespace models;
+//Include mysqli class
+use mysqli;
 //A database class to connect to a mysql database
 class Database{
     //The connection string
     private $connection;
     //The constructor
+    /**
+     * Database constructor.
+     * @param string $host The host of the database
+     * @param string $username The username of the database
+     * @param string $password The password of the database
+     * @param string $database The database name
+     */
     function __construct($host="localhost", $username="root", $password="", $database="bonds")
     {
         //Create a connection
