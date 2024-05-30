@@ -1,4 +1,5 @@
 <?php 
+namespace Routes;
 //Define the router class
 class Router{
     //A member to hold the routes
@@ -46,21 +47,4 @@ class Router{
         http_response_code(404);//Return a 404 status code
     }
 }
-//Define the route class
-class route{
-    public $method;
-    public $path;
-    public $callback;
-    /**
-     * Constructor
-     * @param string $method The HTTP method
-     * @param string $path The path
-     * @param callable $callback The callback function
-     */
-    function __construct($method, $path, $callback)
-    {
-        $this->method = $method;
-        $this->path = $path;
-        $this->callback=$callback;
-    }
-}
+

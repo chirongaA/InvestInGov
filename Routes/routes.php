@@ -1,6 +1,8 @@
 <?php
 //Import the router class
-require_once 'router.class.php';
+use Routes\router;
+use Routes\route;
+
 //Define some routes
 $routes=[];
 

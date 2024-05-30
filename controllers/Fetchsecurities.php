@@ -1,12 +1,6 @@
 <?php
-//Load the necessary classes
-$directory = dirname(__FILE__);
-$models = realpath("$directory/../models");
-require_once("$models/securities.model.php");
 use models\Securities;
-?>
-
-<?php
+//Create a new securities object
 $securities = new Securities();
 $securities = $securities->fetchAll();
 if($securities)
