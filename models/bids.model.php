@@ -1,10 +1,10 @@
 <?php
-//Include the database class
-$directory = dirname(__FILE__);
-$database = "$directory/database.class.php";
-require_once($database);
+//Declare the Bids namespace
+namespace models;
+use models\Database;
 
 //Create the Bids class as a child class of the database class
+//The bids class will be used to interact with the bids table in the database
 class Bids extends Database{
     //The table name
     const TABLE_NAME = 'bids';

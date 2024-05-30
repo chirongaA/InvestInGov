@@ -1,11 +1,5 @@
 <?php
-//Load the necessary classes
-$directory = dirname(__FILE__);
-$models = realpath("$directory/../models");
-require_once("$models/bids.models.php");
-?>
-
-<?php
+use models\Bids;
 //check and see if all the data has been submitted
 /*
 [

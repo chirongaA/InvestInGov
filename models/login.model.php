@@ -1,9 +1,10 @@
 <?php
+namespace models;//Declare the Login namespace so that the LoginModel class can be used
 //Include the database class
 $directory = dirname(__FILE__);
 $database = "$directory/database.class.php";
 require_once($database);
-
+use models\Database;//Import the database class
 
 class LoginModel extends Database {
     // Constructor

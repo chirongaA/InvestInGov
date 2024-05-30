@@ -1,8 +1,10 @@
 <?php
+namespace models;
 //Include the database class
 $directory = dirname(__FILE__);
 $database = "$directory/database.class.php";
 require_once($database);
+use models\Database;
 //Create the User class as a child class of the database class
 class User extends Database{
     //The table name

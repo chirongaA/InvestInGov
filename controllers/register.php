@@ -1,6 +1,7 @@
 <?php
 //Load the necessary classes
 require_once './models/user.model.php'; //User model
+use models\User; //User model
 ?>
 
 <?php
