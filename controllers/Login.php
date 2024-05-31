@@ -1,5 +1,5 @@
 <?php
-use models\LoginModel;
+use models\Login;
 
 
 $response=[
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Create a new LoginModel object
-    $loginModel = new LoginModel();
+    $loginModel = new Login();
     // Check if the email exists
     $emailExists = $loginModel->emailExists($email);
     if (!$emailExists) {
