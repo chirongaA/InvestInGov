@@ -161,6 +161,66 @@
     </section>
 
     <script src="./public/bids.js"></script>
+    <script>
+        window.onload = function(){
+            fillSecuritiesTable();
+        }
+        function fillSecuritiesTable(){
+        //Get the table body
+        let tableBody = document.querySelector('tbody');
+        //Empty the table body
+        tableBody.innerHTML = 'Loading data...';
+        //To fetch the securities from the database
+        fetch('./securities', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            return response.json();
+        }).then(data => {
+            //Empty the table body
+            tableBody.innerHTML = '';
+            //Parse the data 
+            let securities = data;
+            securities=data.data; //Get the securities from the data object
+            securities.forEach(security => {
+                //Create a row for each security
+                let row = createSecurityRow(security);
+                //Append the row to the table body
+                tableBody.appendChild(row);
+            });
+        }).catch(error => {
+            console.log(error);
+        });
+        }
+        function createSecurityRow(data)
+        {
+            //Create a table row
+            let row = document.createElement('tr');
+            //Create a table data
+            let bondId = document.createElement('td');
+            bondId.textContent = data.bond_id;
+            row.appendChild(bondId);
+            let bondName = document.createElement('td');
+            bondName.textContent = data.bond_name;
+            row.appendChild(bondName);
+            let faceValue = document.createElement('td');
+            faceValue.textContent = data.facevalue;
+            row.appendChild(faceValue);
+            let maturity = document.createElement('td');
+            maturity.textContent = data.maturity;
+            row.appendChild(maturity);
+            let rate = document.createElement('td');
+            rate.textContent = data.rate;
+            row.appendChild(rate);
+            let status = document.createElement('td');
+            status.textContent = data.status;
+            row.appendChild(status);
+            return row;
+        }
+    </script>
 
 </body>
 </html>
