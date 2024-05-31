@@ -3,6 +3,7 @@ use models\Securities;
 //Create a new securities object
 $securities = new Securities();
 $securities = $securities->fetchAll();
+header('Content-Type: application/json');
 if($securities)
 {
     echo json_encode(array("status"=>"success", "message"=>"Securities fetched successfully", "data"=>$securities));

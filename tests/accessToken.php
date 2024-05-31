@@ -1,7 +1,8 @@
 <?php
 //Mpesa API keys
-$consumerKey = "6LzluxGsY4i1jkec3HFTEDwZo9UuGLVg93dTMo9ijvWspEfF";
-$consumerSecret = "wnIQiyBsum77BkALtAipXHdbvGW8AH6HAje5ekL7qppl7vHG4xM3GATGZdoHTPFg";
+//Get consumerkey from ENV
+$consumerKey = getenv('CONSUMER_KEY');
+$consumerSecret = getenv('CONSUMER_SECRET');
 //access token url
 $access_token_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 $headers=['Content-Type:application/json; charset=utf8'];
