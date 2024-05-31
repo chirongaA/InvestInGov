@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="payments.css">
+<link rel="stylesheet" type="text/css" href="./public/bids.css">
 <link  rel="icon" type="image/png" href="images/favicon.jpg">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <title>PAYMENTS</title>
@@ -41,13 +41,13 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-user-pin icon'></i>
-                            <span class="text nav-text">Portfolio</span>
+                            <span class="text nav-text">Profile</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-transfer-alt icon'></i>
-                            <span class="text nav-text">Transactions</span>
+                            <span class="text nav-text">Portfolio</span>
                         </a>
                     </li>
                     <li class="nav-link">
@@ -73,7 +73,7 @@
 
             <div class="bottom content">
                 <li class="">
-                    <a href="/login">
+                    <a href="/welcome">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -111,41 +111,41 @@
             </div>
 
                 <div class= "card--container">
-                    <p class="payment-header"> Kindly fill out this form and confirm to make your payments.<br>Please remember that you can only make payments on the bonds that you successfully bidded for.</p><br>
+                    <p class="bid-header"> Kindly fill out this form and confirm to move into the next step of payment.</p>
                     <div class = "card--wrapper">
                         <div class="card">
                             <div class="card--header">
-                                <h3>Payment form</h3>
+                                <h3>Payment Form</h3>
                             </div>
 
-                            <div class="payment-container">
-                                <form id="Payments" action="payments.php" method="post">
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="text" id="username" placeholder="Username" required>
+                            <div class="bid-container">
+                                <form id="Bids" action="" method="post">
+                                    <div class="input-box">
+                                        <div class="input-field">
+                                            <input type="text" id="username" placeholder="Username" required>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="text" id="bondID" placeholder="BOND ID" required>
+                                    
+                                    <div class="input-box">
+                                        <div class="input-field">
+                                            <input type="text" id="bondID" placeholder="BOND ID" required>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="number" id="yield" placeholder="Yield" required onchange="validateYield()">
+    
+                                    <div class="input-box">
+                                        <div class="input-field">
+                                            <input type="number" id="yield" placeholder="Yield" required onchange="validateYield()">
+                                        </div>
                                     </div>
-                                </div>
-                              
-                                <div class="input-box">
-                                    <div class="input-field">
-                                        <input type="number" id="phone" placeholder="Phone Number" required>
+                                  
+                                    <div class="input-box">
+                                        <div class="input-field">
+                                            <input type="number" id="phone" placeholder="Phone Number" required>
+                                        </div>
                                     </div>
-                                </div>
                               
                                 <label><input type= "checkbox"> I have confirmed all my details</label><br>
-                                <button type=" submit" class="btn">Make payment</button>
+                                <button type="submit" class="btn">Make Payment</button>
                                 <br><br>
                                 <button type="reset"  class="btn2" onclick="clearForm()">Clear</button>
 
@@ -156,7 +156,7 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="./public/bids.js"></script>
 
 </body>
 </html>

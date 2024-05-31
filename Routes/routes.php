@@ -7,6 +7,11 @@ use Routes\route;
 $routes=[];
 
 // getting the pages
+$homepage= new route('GET', '/welcome', function($parameters) {
+    include './controllers/views/welcome.php';
+});
+array_push($routes, $homepage);//put the route into the array
+
 $homepage= new route('GET', '/home', function($parameters) {
     include './controllers/views/home.php';
 });
@@ -42,7 +47,10 @@ $route= new route('GET', '/usersecurities', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
-
+$route= new route('GET', '/payments', function($parameters) {
+    include './controllers/views/payments.php';
+});
+array_push($routes, $route);//put the route into the array
 
 // routes for submitting data
 $route= new route('POST', '/submit_register', function($parameters) {
@@ -60,7 +68,7 @@ $route= new route('POST', '/submit_login', function($parameters) {
 });
 array_push($routes, $route);//put the route into the array
 
-$route= new route('POST', '/admin/submit_security', function($parameters) {
+$route= new route('POST', '/submit_security', function($parameters) {
     include './controllers/Security.php';
 });
 array_push($routes, $route);//put the route into the array
