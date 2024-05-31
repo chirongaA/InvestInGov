@@ -1,4 +1,5 @@
 <?php
+//Function to autoload classes
 spl_autoload_register(function ($class) {
     // Convert namespace to full file path
     $path = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
