@@ -38,6 +38,8 @@ if($_POST['password'] != $_POST['confirm_password'])
 $create = $user->create($_POST);
 if($create)
 {
+    session_start();
+    $_SESSION['email'] = $_POST['email'];//Set the email in the session
     echo json_encode(array("status"=>"success", "message"=>"User created successfully"));
     //Set http response code
     http_response_code(201);

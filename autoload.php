@@ -1,27 +1,25 @@
 <?php
-//Function to autoload classes
+// Function to autoload classes
 spl_autoload_register(function ($class) {
     // Convert namespace to full file path
     $path = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 
-    // Adjust the path based on your directory structure and naming convention
-    $path = str_replace('.php', '.model.php', $path);
-    
-    $file = __DIR__ . '/' . $path;
+    // Directory where your classes are located
+    $baseDir = __DIR__ . '/';
 
-    if (file_exists($file)) {
-        require $file;
-    }
-    else{
-        //If it's a .class.php file
-        $path = str_replace('.model.php', '.class.php', $path);
-        $file = __DIR__ . '/' . $path;
-        if (file_exists($file)) {
-            require $file;
-        }
-        else{
-            //Throw a fatal error
-            die("File '$file' containing class '$class' not found.");
+    // Possible file extensions
+    $extensions = ['.model.php', '.class.php', '.controller.php', '.middleware.php'];
+
+    // Check each possible file path
+    foreach ($extensions as $extension) {
+        $filePath = $baseDir . str_replace('.php', $extension, $path);
+        if (file_exists($filePath)) {
+            require $filePath;
+            return;
         }
     }
+
+    $ds=DIRECTORY_SEPARATOR;
+    // If no file was found, throw a fatal error
+    die("File for class '$class' not found.");
 });
