@@ -1,5 +1,5 @@
 <?php
-include('express-stk.php');
+include 'database.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -145,4 +145,5 @@ include('express-stk.php');
         <p style="color: #8F9C23; line-height: 1.7; margin-top:5rem;"> Copyright 2024 | All rights reserved | Made by InvestInGov </p>
         </div>
     </body>
+    
 </html>

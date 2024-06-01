@@ -45,6 +45,16 @@ $homepage= new route('GET', '/home', function($parameters) {
 });
 array_push($routes, $homepage);//put the route into the array
 
+$homepage= new route('GET', '/payments', function($parameters) {
+    include './controllers/views/payments.php';
+});
+array_push($routes, $homepage);//put the route into the array
+
+$homepage= new route('GET', '/welcome', function($parameters) {
+    include './controllers/views/welcome.php';
+});
+array_push($routes, $homepage);//put the route into the array
+
 
 
 // routes for submitting data
