@@ -98,6 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $sql = "UPDATE payments SET CheckoutRequestID='$checkoutRequestID' WHERE username='$username' AND bond_id='$bond_id' AND payment_status='pending'";
             if ($conn->query($sql) === TRUE) {
                 echo "CheckoutRequestID saved successfully.";
+                header("Location: callback.php?username=$username&bond_id=$bond_id");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
