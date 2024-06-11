@@ -1,0 +1,22 @@
+{
+    "payment_method": "MpesaKE",
+    "amount": 1.0,
+    "created_date": "2024-06-11T15:32:43.827",
+    "confirmation_code": "SFB35Q86JJ",
+    "order_tracking_id": "1e6f4b50-ff5a-4de6-9c6e-dd2033e07577",
+    "payment_status_description": "Completed",
+    "description": null,
+    "message": "Request processed successfully",
+    "payment_account": "2547xxx04787",
+    "call_back_url": "https://arriving-carefully-dingo.ngrok-free.app/tests/response_page.php?OrderTrackingId=1e6f4b50-ff5a-4de6-9c6e-dd2033e07577&OrderMerchantReference=832693598992412873",
+    "status_code": 1,
+    "merchant_reference": "832693598992412873",
+    "payment_status_code": "",
+    "currency": "KES",
+    "error": {
+        "error_type": null,
+        "code": null,
+        "message": null
+    },
+    "status": "200"
+}
