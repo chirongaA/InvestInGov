@@ -119,28 +119,28 @@
                             </div>
 
                             <div class="bid-container">
-                                <form id="Bids" action="" method="post">
+                                <form id="Payments" action="" method="post">
                                     <div class="input-box">
                                         <div class="input-field">
-                                            <input type="text" id="username" placeholder="Username" required>
+                                            <input type="text" id="username" name="username" placeholder="Username" required>
                                         </div>
                                     </div>
                                     
                                     <div class="input-box">
                                         <div class="input-field">
-                                            <input type="text" id="bondID" placeholder="BOND ID" required>
+                                          <input type="text" id="bondID" name="bond_id" placeholder="BOND ID" required>
                                         </div>
                                     </div>
     
                                     <div class="input-box">
                                         <div class="input-field">
-                                            <input type="number" id="yield" placeholder="Yield" required onchange="validateYield()">
+                                            <input type="number" id="yield" name="yield" placeholder="Yield" required>
                                         </div>
                                     </div>
                                   
                                     <div class="input-box">
                                         <div class="input-field">
-                                            <input type="number" id="phone" placeholder="Phone Number" required>
+                                            <input type="number" id="phone" name="phonenumber" placeholder="Phone Number" required>
                                         </div>
                                     </div>
                               
@@ -156,7 +156,7 @@
         </div>
     </section>
 
-    <script src="./public/bids.js"></script>
+    <script src="./public/payments.js"></script>
 
 </body>
 </html>

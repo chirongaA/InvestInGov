@@ -1,14 +1,13 @@
 window.onload = () => {
-    const form = document.getElementById('Bids');
+    const form = document.getElementById('Payments');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new URLSearchParams(new FormData(form));
-        fetch('../submit_bid', {
+        fetch('../make_payment', {
             method: "POST",
             body: formData,
         }).then(res => res.json())
         .then(data => {
-            console.log(data);
             //check if there is an error
             if(data.status=="error"){
                 //display the error message
@@ -16,7 +15,7 @@ window.onload = () => {
             }
             else{
                 // alert(data.message);
-                window.location.href = "./payments";
+                window.location.href = "./tests/SubmitRequest.php";
             }
         })
     })

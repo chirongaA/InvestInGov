@@ -68,6 +68,11 @@ $route= new route('POST', '/submit_bid', function($parameters) {
     include './controllers/Bid.php';
 });
 array_push($routes, $route);//put the route into the array
+//A route to make a payment
+$route= new route('POST', '/make_payment', function($parameters) {
+    include './controllers/Payment.php';
+});
+array_push($routes, $route);//put the route into the array
 #----------------------------------------------------------------------------------------------------------
 //A route to submit login data
 $route= new route('POST', '/submit_login', function($parameters) {

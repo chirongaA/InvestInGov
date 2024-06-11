@@ -1,13 +1,11 @@
 <?php
-use models\Bids;
+use models\Payments;
 //check and see if all the data has been submitted
 /*
 [
     "username":
     "b0nd_id":
-    "face value":
-    "maturity":
-    "rate":
+    "phonenumber":
     "yield":
 ]
 */
@@ -25,13 +23,13 @@ foreach($_POST as $key => $value)
         exit();
     }
 }
-//Create a new bids object
-$bid = new Bids();
-//Create a new bid
-$create = $bid->create($_POST);
+//Create a new payments object
+$payment = new Payments();
+//Create a new payment
+$create = $payment->create($_POST);
 if($create)
 {
-    echo json_encode(array("status"=>"success", "message"=>"Bid submitted successfully."));
+    echo json_encode(array("status"=>"success", "message"=>"Payment request submitted successfully"));
     //Set http response code
     http_response_code(201);
 }
@@ -41,3 +39,4 @@ else
     //Set http response code
     http_response_code(500);
 }
+
