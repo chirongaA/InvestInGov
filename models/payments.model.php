@@ -35,23 +35,7 @@ class Payments extends Database{
         $_SESSION['yield']=$yield;
         $_SESSION['username']=$username;
         $_SESSION['bond_id']=$bond_id;
-        //Create the query
-        $table_name = self::TABLE_NAME;
-        $query = "INSERT INTO $table_name (username, bond_id, yield, phonenumber) VALUES ('$username', '$bond_id', '$yield','$phonenumber')";
-        //Execute the query
-        $exec=$this->query($query);
-        if($exec)
-        {
-            //Return the last inserted id
-            $this->bond_id=$this->lastInsertId();
-            //Set Data
-            $this->setData($payment);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return true;
     }
     //To set the data of the bid
     private function setData($data):bool {
@@ -60,6 +44,28 @@ class Payments extends Database{
         $this->yield = $data['yield'];
         $this->phonenumber = $data['phonenumber'];
         return true;
+    }
+    //Method to enter the payment details into the database
+    public function save($paymentInfo)
+    {
+        //Escape the payment data
+        $payment_status_description = $this->escape($paymentInfo->payment_status_description);
+        $confirmationCode=$this->escape($paymentInfo->confirmation_code);
+        $username = $_SESSION['username'];
+        $bond_id = $_SESSION['bond_id'];
+        $yield = $_SESSION['yield'];
+        $phonenumber = $_SESSION['phonenumber'];
+        //The query to insert the payment details into the database
+        $query = "INSERT INTO payments (username, bond_id, yield, phonenumber,payment_status_description, confirmation_code) VALUES ('$username', '$bond_id', '$yield', '$phonenumber', '$payment_status_description' , '$confirmationCode')";
+        //Execute the query
+        $result = $this->query($query);
+        var_dump($result);
+        //check if the query was successful
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 ?>
