@@ -1,6 +1,5 @@
 <?php
 session_start(); // Start the session at the beginning of the script
-
 // Check if the form data is stored in the session
 if(isset($_SESSION['phonenumber']) && isset($_SESSION['yield'])){
     $phone = $_SESSION['phonenumber'];
@@ -64,6 +63,18 @@ $response = curl_exec($ch);
 $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 $data = json_decode($response);
+var_dump($response);
+exit();
 $redirect_url = $data->redirect_url;
+$username=$_SESSION['username'];
+$bond_id=$_SESSION['bond_id'];
+$phone=$_SESSION['phonenumber'];
+$yield=$_SESSION['yield'];
+
+//set a cookie with all the user data
+setcookie("username", $username, time() + (86400 * 30), "/");
+setcookie("bond_id", $bond_id, time() + (86400 * 30), "/");
+setcookie("phonenumber", $phone, time() + (86400 * 30), "/");
+setcookie("yield", $yield, time() + (86400 * 30), "/");
 //echo "<a href= '$redirect_url'>Click here to pay</a>";
 echo "<script>window.location.href='$redirect_url'</script>";

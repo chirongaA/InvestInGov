@@ -42,6 +42,18 @@ $transaction->confirmation_code=$confirmation_code;
 $transaction->amount=$amount;
 $transaction->payment_status_description=$payment_status_description;
 
+//Get the username, yield, phonenumber, bondid from the cookie
+$username=$_COOKIE['username'];
+$bond_id=$_COOKIE['bond_id'];
+$phone=$_COOKIE['phonenumber'];
+$yield=$_COOKIE['yield'];
+
+//set the user details in the transaction object
+$transaction->username=$username;
+$transaction->bond_id=$bond_id;
+$transaction->phonenumber=$phone;
+$transaction->yield=$yield;
+
 //To save the transaction object to the database
 $payment=new Payments();
 $exec=$payment->save($transaction);
