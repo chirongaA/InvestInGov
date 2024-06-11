@@ -30,5 +30,5 @@
 $data=file_get_contents("../sth.json");
 $data=json_decode($data);
 $amount=$data->amount;
-$confirmation_code=$jsondata->confirmation_code;
-$payment_status_description=$jsondata->payment_status_description;
+$confirmation_code=$data->confirmation_code;
+$payment_status_description=$data->payment_status_description;
