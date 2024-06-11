@@ -51,10 +51,10 @@ class Payments extends Database{
         //Escape the payment data
         $payment_status_description = $this->escape($paymentInfo->payment_status_description);
         $confirmationCode=$this->escape($paymentInfo->confirmation_code);
-        $username = $_SESSION['username'];
-        $bond_id = $_SESSION['bond_id'];
-        $yield = $_SESSION['yield'];
-        $phonenumber = $_SESSION['phonenumber'];
+        $username =$this->escape($paymentInfo->username);
+        $bond_id = $this->escape($paymentInfo->bond_id);
+        $yield = $this->escape($paymentInfo->yield);
+        $phonenumber = $this->escape($paymentInfo->phonenumber);
         //The query to insert the payment details into the database
         $query = "INSERT INTO payments (username, bond_id, yield, phonenumber,payment_status_description, confirmation_code) VALUES ('$username', '$bond_id', '$yield', '$phonenumber', '$payment_status_description' , '$confirmationCode')";
         //Execute the query
