@@ -1,5 +1,7 @@
 <?php
 session_start(); // Start the session at the beginning of the script
+require_once  "../autoload.php"; //This is the file that contains the autoloader function
+use models\Payments;
 // Check if the form data is stored in the session
 if(isset($_SESSION['phonenumber']) && isset($_SESSION['yield'])){
     $phone = $_SESSION['phonenumber'];
@@ -63,18 +65,28 @@ $response = curl_exec($ch);
 $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 $data = json_decode($response);
-var_dump($response);
-exit();
 $redirect_url = $data->redirect_url;
 $username=$_SESSION['username'];
 $bond_id=$_SESSION['bond_id'];
 $phone=$_SESSION['phonenumber'];
 $yield=$_SESSION['yield'];
 
-//set a cookie with all the user data
-setcookie("username", $username, time() + (86400 * 30), "/");
-setcookie("bond_id", $bond_id, time() + (86400 * 30), "/");
-setcookie("phonenumber", $phone, time() + (86400 * 30), "/");
-setcookie("yield", $yield, time() + (86400 * 30), "/");
+// Save the payment order request into the data
+$payment = new Payments();
+//create an object to store the details
+$request = new stdClass();
+$request->username = $username;
+$request->bond_id = $bond_id;
+$request->yield = $yield;
+$request->phone_number = $phone;
+$request->order_tracking_id = $data->order_tracking_id;
+$request->merchant_reference = $data->merchant_reference;
+$req=$payment->saveRequest($request);
+if(!$req){
+    echo "Failed to save the payment request";
+    exit;
+}
+else{
 //echo "<a href= '$redirect_url'>Click here to pay</a>";
 echo "<script>window.location.href='$redirect_url'</script>";
+}

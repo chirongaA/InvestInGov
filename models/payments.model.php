@@ -59,10 +59,38 @@ class Payments extends Database{
         $query = "INSERT INTO payments (username, bond_id, yield, phonenumber,payment_status_description, confirmation_code) VALUES ('$username', '$bond_id', '$yield', '$phonenumber', '$payment_status_description' , '$confirmationCode')";
         //Execute the query
         $result = $this->query($query);
-        var_dump($result);
         //check if the query was successful
         if($result){
             return true;
+        }else{
+            return false;
+        }
+    }
+    //Method to save an intermediary payment into the database
+    public function saveRequest($request)
+    {
+        //The query to insert the payment details into the database
+        $query = "INSERT INTO payments_tracking (username, bond_id, yield, phone_number,order_tracking_id,merchant_reference) VALUES ('$request->username', '$request->bond_id', '$request->yield', '$request->phone_number','$request->order_tracking_id','$request->merchant_reference')";
+        //Execute the query
+        $result = $this->query($query);
+        //check if the query was successful
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Function to fetch the request by a given order_tracking_id
+    public function fetchRequest($order_tracking_id)
+    {
+        //The query to fetch the payment details from the database
+        $query = "SELECT * FROM payments_tracking WHERE order_tracking_id = '$order_tracking_id'";
+        //Execute the query
+        $result = $this->query($query);
+        //check if the query was successful
+        if($result){
+            return $result->fetch_assoc();
         }else{
             return false;
         }
