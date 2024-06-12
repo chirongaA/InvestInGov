@@ -61,7 +61,7 @@ class Payments extends Database{
         $result = $this->query($query);
         //check if the query was successful
         if($result){
-            return true;
+            return $result;
         }else{
             return false;
         }

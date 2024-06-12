@@ -27,7 +27,6 @@ echo $response = curl_exec($ch);
 $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 $data = json_decode($response);
-
 $amount=$data->amount;
 $confirmation_code=$data->confirmation_code;
 $payment_status_description=$data->payment_status_description;
@@ -38,15 +37,16 @@ $transaction->amount=$amount;
 $transaction->payment_status_description=$payment_status_description;
 //To save the transaction object to the database
 $payment=new Payments();
-$request=$payment->fetchRequest($_GET['orderTrackingId']);
+$request=$payment->fetchRequest(($data->order_tracking_id));
 //set the user details in the transaction object by fetching it from the database
 $transaction->username=$request['username'];
 $transaction->bond_id=$request['bond_id'];
-$transaction->phonenumber=$request['phonenumber'];
+$transaction->phonenumber=$request['phone_number'];
 $transaction->yield=$request['yield'];
 $exec=$payment->save($transaction);
 if($exec){
     echo "Payment saved successfully";
+    header("Location:http://localhost/home");
 }else{
     echo "Payment not saved";
 }
