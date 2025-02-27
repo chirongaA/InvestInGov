@@ -3,18 +3,21 @@
 InvestInGov is a fintech application enabling users to seamlessly invest in government securities, providing real-time data, portfolio management, and secure transaction processing.
 
 What was the selling point? What was I trying to solve?
-Securities investments are growing rapidly in Kenya with over 
+Securities investments are growing rapidly in Kenya with over 35 billion Kshs invested in the reopening of the treasury bond FXD1/2020/005 dated 19th of February, 2025. Such staggering numbers have not only been as a result of civic education regarding such investements, but ha s also been owed to the introduction of an application (DhowCSD). This platform features access to real-time market data, portfolio management, ability to place bids among other crucial investment processes.
+
+However, this system failed to implement an online in-app transaction system, forcing investors to complete transfers of their funds outside of the system, with some having to go physically to their respective commercial banks. 
+
+This is where InvestInGov comes into play; Integrating the current system functionalities with transaction processing.
 
 ## Features
 
-- **Real-Time Data**: Access up-to-date information on various government securities.
+- **Sample Data**: Access to information on various government securities.
 - **Portfolio Management**: Tools to track and manage investments efficiently.
-- **Secure Transactions**: Robust security measures ensuring safe investment operations.
+- **Transactions Processing**: Use of API calls to ensure transactions are done on-site.
 
 ## Tech Stack
 
-- **Frontend**: [React](https://reactjs.org/) with [Redux](https://redux.js.org/) for state management.
-- **Backend**: [Node.js](https://nodejs.org/) with [Express](https://expressjs.com/).
-- **Database**: [MongoDB](https://www.mongodb.com/).
-- **Authentication**: [OAuth 2.0](https://oauth.net/2/).
-- **APIs**: Integration with external services for real-time data.
+- **Frontend**: HTML, CSS, JS
+- **Backend**:  php
+- **Database**: phpMyADmin
+- **APIs**: Integration of the PesaPal API for transaction processing.
