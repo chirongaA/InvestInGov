@@ -19,5 +19,5 @@ This is where InvestInGov comes into play; Integrating the current system functi
 
 - **Frontend**: HTML, CSS, JS
 - **Backend**:  php
-- **Database**: phpMyADmin
+- **Database**: MySQL
 - **APIs**: Integration of the PesaPal API for transaction processing.
